@@ -355,5 +355,4 @@ defmodule Garnish do
     flags = flags ||| if (f &&& 0x100) == 0x100, do: 0b00100000, else: 0
     term.sgr(flags)
   end
-
 end
