@@ -7,6 +7,7 @@ defmodule Garnish.MixProject do
   def project do
     [
       app: :garnish,
+      description: description(),
       version: @version,
       elixir: "~> 1.15",
       source_url: @scm_url,
@@ -23,6 +24,8 @@ defmodule Garnish.MixProject do
       extra_applications: [:logger, :ssh]
     ]
   end
+
+  defp description, do: "A Terminal-UI framework for SSH-enabled applications."
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
