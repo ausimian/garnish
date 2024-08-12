@@ -1,6 +1,8 @@
 # Garnish
 
-![Hex.pm Version](https://img.shields.io/hexpm/v/garnish)
+[![Hex.pm Version](https://img.shields.io/hexpm/v/garnish)](https://hex.pm/packages/garnish)
+![GitHub License](https://img.shields.io/github/license/ausimian/garnish)
+
 
 `Garnish` is a terminal-UI (TUI) framework built around via Erlang's
 [ssh](https://www.erlang.org/doc/apps/ssh/ssh.html) application.
