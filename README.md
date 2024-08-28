@@ -7,7 +7,7 @@
 `Garnish` is a terminal-UI (TUI) framework built around via Erlang's
 [ssh](https://www.erlang.org/doc/apps/ssh/ssh.html) application.
 
-[![asciicast](https://asciinema.org/a/5FPyUxdxDPMHNRjU13wrrcEWh.svg)](https://asciinema.org/a/5FPyUxdxDPMHNRjU13wrrcEWh)
+[![asciicast](https://asciinema.org/a/GtXuCsbdVyMub7tWv3Oyw6jry.svg)](https://asciinema.org/a/GtXuCsbdVyMub7tWv3Oyw6jry)
 
 ## Installation
 
