@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0] - 2024-11-25
+
+### New features
+
+-  Added support for xterm, linux and rxvt consoles
+
 ## [0.1.2] - 2024-08-12
 
 ### Fixed

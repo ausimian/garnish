@@ -36,7 +36,10 @@ defmodule Garnish.TermInfo do
   @optional_callbacks rmkx: 0, smkx: 0
 
   @supported %{
-    "xterm-256color" => Garnish.TermInfo.Xterm256color
+    "xterm-256color" => Garnish.TermInfo.Xterm256color,
+    "xterm" => Garnish.TermInfo.Xterm,
+    "linux" => Garnish.TermInfo.Linux,
+    "rxvt" => Garnish.TermInfo.Rxvt
   }
 
   @doc """
