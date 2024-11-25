@@ -17,7 +17,7 @@ in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:garnish, "~> 0.1.0"}
+    {:garnish, "~> 0.2.0"}
   ]
 end
 ```
