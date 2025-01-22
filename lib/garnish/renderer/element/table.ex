@@ -115,7 +115,7 @@ defmodule Garnish.Renderer.Element.Table do
 
   defp transpose(rows) do
     rows
-    |> List.zip()
+    |> Enum.zip()
     |> Enum.map(&Tuple.to_list/1)
   end
 
