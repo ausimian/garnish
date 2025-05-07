@@ -128,7 +128,7 @@ defmodule Garnish.Renderer.Box do
         },
         %Position{x: x, y: y}
       ) do
-    x in x1..x2 && y in y1..y2
+    x in x1..x2//1 && y in y1..y2//1
   end
 
   def from_dimensions(width, height, origin \\ %Position{x: 0, y: 0}) do
