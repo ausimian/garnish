@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.2] - 2025-05-08
+
+### Fixed
+
+-  Fix box rendering overflow [cr: ggwpez]
+
+## [0.2.1] - 2025-01-22
+
+### Fixed
+
+-  Replace List.zip with Enum.zip
+
 ## [0.2.0] - 2024-11-25
 
 ### New features
