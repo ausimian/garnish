@@ -88,21 +88,15 @@ defmodule Garnish.Renderer.Box do
   @doc """
   Given a box, returns a slice of the y axis with `n` rows from the top.
   """
-  def head(box, n) do
-    %Box{
-      box
-      | bottom_right: %Position{box.bottom_right | y: box.top_left.y + n - 1}
-    }
+  def head(%Box{bottom_right: %Position{} = br} = box, n) do
+    %Box{box | bottom_right: %Position{br | y: box.top_left.y + n - 1}}
   end
 
   @doc """
   Given a box, returns a slice of the y axis with `n` rows from the bottom.
   """
-  def tail(box, n) do
-    %Box{
-      box
-      | top_left: %Position{box.top_left | y: box.bottom_right.y - n + 1}
-    }
+  def tail(%Box{top_left: %Position{} = tl} = box, n) do
+    %Box{box | top_left: %Position{tl | y: box.bottom_right.y - n + 1}}
   end
 
   def top_left(%Box{top_left: top_left}), do: top_left
