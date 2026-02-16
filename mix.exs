@@ -13,6 +13,7 @@ defmodule Garnish.MixProject do
       source_url: @scm_url,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      aliases: aliases(),
       docs: docs(),
       package: package()
     ]
@@ -32,6 +33,7 @@ defmodule Garnish.MixProject do
     [
       {:typedstruct, "~> 0.5.0", runtime: false},
       {:ex_doc, "~> 0.31", only: :dev, runtime: false},
+      {:expublish, "~> 2.7", only: :dev, runtime: false},
       {:asciichart, "~> 1.0"}
     ]
   end
@@ -43,6 +45,22 @@ defmodule Garnish.MixProject do
       links: %{"GitHub" => @scm_url},
       files: ~w(lib CHANGELOG.md LICENSE.md mix.exs README.md .formatter.exs)
     ]
+  end
+
+  defp aliases do
+    [
+      publish: &publish/1
+    ]
+  end
+
+  defp publish([level | rest]) when level in ~w(major minor patch) do
+    args = ["--branch", "main", "--tag-prefix", "", "--disable-publish"] ++ rest
+    Mix.Task.run("expublish.#{level}", args)
+    Mix.shell().info("\nManually push to hex with 'mix hex.publish'")
+  end
+
+  defp publish(_) do
+    Mix.raise("Usage: mix publish <major|minor|patch> [options]")
   end
 
   defp docs do

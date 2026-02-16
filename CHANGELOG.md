@@ -1,5 +1,7 @@
 # Changelog
 
+<!-- %% CHANGELOG_ENTRIES %% -->
+
 ## [0.2.2] - 2025-05-08
 
 ### Fixed
