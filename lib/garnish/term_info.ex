@@ -37,6 +37,9 @@ defmodule Garnish.TermInfo do
 
   @supported %{
     "xterm-256color" => Garnish.TermInfo.Xterm256color,
+    "tmux-256color" => Garnish.TermInfo.Xterm256color,
+    "screen-256color" => Garnish.TermInfo.Xterm256color,
+    "screen" => Garnish.TermInfo.Xterm,
     "xterm" => Garnish.TermInfo.Xterm,
     "linux" => Garnish.TermInfo.Linux,
     "rxvt" => Garnish.TermInfo.Rxvt
