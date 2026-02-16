@@ -108,13 +108,13 @@ defmodule Garnish.TermInfo.Xterm do
 
   def setaf(fg) when is_integer(fg) do
     <<
-      "\e[", <<?3, Integer.to_string(fg)::binary>>, ?m
+      "\e[", <<?3, Integer.to_string(rem(fg, 8))::binary>>, ?m
     >>
   end
 
   def setab(bg) when is_integer(bg) do
     <<
-      "\e[", <<?4, Integer.to_string(bg)::binary>>, ?m
+      "\e[", <<?4, Integer.to_string(rem(bg, 8))::binary>>, ?m
     >>
   end
 
