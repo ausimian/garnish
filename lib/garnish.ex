@@ -339,6 +339,14 @@ defmodule Garnish do
 
   defp set_colors(0, 0, _), do: <<>>
 
+  defp set_colors(fg, 0, term) do
+    <<term.setaf(fg - 1)::binary>>
+  end
+
+  defp set_colors(0, bg, term) do
+    <<term.setab(bg - 1)::binary>>
+  end
+
   defp set_colors(fg, bg, term) do
     <<term.setaf(fg - 1)::binary, term.setab(bg - 1)::binary>>
   end
