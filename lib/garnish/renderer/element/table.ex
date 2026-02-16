@@ -30,7 +30,7 @@ defmodule Garnish.Renderer.Element.Table do
   defp render_table_row(%Canvas{} = canvas, row, col_sizes) do
     row.children
     |> Enum.zip(col_sizes)
-    |> Enum.reduce({canvas, 0}, fn {cell, col_size}, {acc_canvas, offset} ->
+    |> Enum.reduce({canvas, 0}, fn {%Element{} = cell, col_size}, {acc_canvas, offset} ->
       new_cell = %Element{
         cell
         | attributes: Map.merge(row.attributes, cell.attributes)

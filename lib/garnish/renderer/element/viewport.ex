@@ -31,7 +31,7 @@ defmodule Garnish.Renderer.Element.Viewport do
     }
   end
 
-  defp translate_bottom_right(box, dx, dy) do
+  defp translate_bottom_right(%Box{} = box, dx, dy) do
     %Box{box | bottom_right: Position.translate(box.bottom_right, dx, dy)}
   end
 
@@ -39,7 +39,7 @@ defmodule Garnish.Renderer.Element.Viewport do
     %Position{x: x0, y: y0} = box.top_left
 
     new_cells =
-      for {%Position{x: x, y: y}, cell} <- cells,
+      for {%Position{x: x, y: y}, %Cell{} = cell} <- cells,
           x + dx >= x0,
           y + dy >= y0,
           into: %{} do

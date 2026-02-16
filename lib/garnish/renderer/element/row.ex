@@ -36,7 +36,7 @@ defmodule Garnish.Renderer.Element.Row do
     |> Enum.max(fn -> 0 end)
   end
 
-  defp reduce_columns(render_fun, {el, column_box}, {canvas, boxes}) do
+  defp reduce_columns(render_fun, {el, column_box}, {%Canvas{} = canvas, boxes}) do
     column_canvas = %Canvas{canvas | render_box: column_box}
     canvas = render_fun.(column_canvas, el)
     {canvas, [canvas.render_box | boxes]}

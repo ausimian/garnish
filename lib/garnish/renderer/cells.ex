@@ -36,7 +36,7 @@ defmodule Garnish.Renderer.Cells do
   Given a starting position, orientation and cell template, returns a cell
   generator which can be used to iteratively generate a row or column of cells.
   """
-  def generator(position, orientation, template \\ Cell.empty()) do
+  def generator(position, orientation, %Cell{} = template \\ Cell.empty()) do
     fn {char_or_binary, offset} ->
       %Cell{
         template

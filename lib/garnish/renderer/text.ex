@@ -21,8 +21,9 @@ defmodule Garnish.Renderer.Text do
   end
 
   def render_group(canvas, text_elements, attrs \\ %{}) do
-    rendered_canvas =
-      Enum.reduce(text_elements, canvas, fn el, canvas ->
+    %Canvas{} =
+      rendered_canvas =
+      Enum.reduce(text_elements, canvas, fn %Element{} = el, canvas ->
         element = %Element{el | attributes: Map.merge(attrs, el.attributes)}
         render_group_member(canvas, element)
       end)

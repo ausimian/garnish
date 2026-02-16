@@ -22,7 +22,7 @@ defmodule Garnish.Renderer.Element.Panel do
   end
 
   def render(
-        %Canvas{render_box: box} = canvas,
+        %Canvas{render_box: %Box{} = box} = canvas,
         %Element{attributes: attrs, children: children},
         render_fn
       ) do
@@ -30,7 +30,8 @@ defmodule Garnish.Renderer.Element.Panel do
     constrained_canvas = constrain_canvas(canvas, attrs[:height])
     padding = attrs[:padding] || @default_padding
 
-    rendered_canvas =
+    %Canvas{} =
+      rendered_canvas =
       constrained_canvas
       |> Canvas.padded(padding + @border_width)
       |> render_fn.(children)
@@ -67,7 +68,7 @@ defmodule Garnish.Renderer.Element.Panel do
   defp title_position(box),
     do: Position.translate_x(box.top_left, @title_offset_x)
 
-  defp wrapper_canvas(rendered_canvas, original_canvas, fill?) do
+  defp wrapper_canvas(%Canvas{} = rendered_canvas, original_canvas, fill?) do
     %Canvas{
       rendered_canvas
       | render_box:
@@ -81,7 +82,7 @@ defmodule Garnish.Renderer.Element.Panel do
 
   defp wrapper_box(_rendered_box, original_box, true), do: original_box
 
-  defp wrapper_box(rendered_box, original_box, false),
+  defp wrapper_box(rendered_box, %Box{} = original_box, false),
     do: %Box{
       original_box
       | bottom_right: %Position{
