@@ -10,7 +10,7 @@ defmodule Garnish.Renderer.Element.TreeTest do
     test "renders a tree with nested nodes" do
       canvas =
         Tree.render(
-          Canvas.from_dimensions(15, 5),
+          Canvas.from_dimensions(15, 6),
           tree do
             tree_node content: "A" do
               tree_node content: "C" do

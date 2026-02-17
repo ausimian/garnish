@@ -48,7 +48,7 @@ defmodule Garnish.Renderer.Element.PanelTest do
     test "renders border and title" do
       canvas =
         Panel.render(
-          Canvas.from_dimensions(16, 4),
+          Canvas.from_dimensions(16, 5),
           @panel_with_title,
           &Renderer.render_tree/2
         )
@@ -65,7 +65,7 @@ defmodule Garnish.Renderer.Element.PanelTest do
     test "renders border and highlighted title" do
       canvas =
         Panel.render(
-          Canvas.from_dimensions(16, 4),
+          Canvas.from_dimensions(16, 5),
           @panel_with_highlighted_title,
           &Renderer.render_tree/2
         )

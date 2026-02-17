@@ -95,7 +95,7 @@ defmodule Garnish.Renderer.Element.ViewportTest do
   end
 
   def render_canvas(element) do
-    canvas = Canvas.from_dimensions(6, 2)
+    canvas = Canvas.from_dimensions(6, 3)
 
     canvas
     |> Viewport.render(element, &Garnish.Renderer.render_tree/2)

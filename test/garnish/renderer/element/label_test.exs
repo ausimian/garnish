@@ -23,7 +23,7 @@ defmodule Garnish.Renderer.Element.LabelTest do
     test "renders multi-line content" do
       assert render_to_strings(
                label(content: "Hello\nWorld!"),
-               {15, 1}
+               {15, 2}
              ) === [
                "Hello ",
                "World!"
